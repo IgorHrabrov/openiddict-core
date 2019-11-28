@@ -40,7 +40,10 @@ namespace OpenIddict.Abstractions
         /// <param name="parameters">The message parameters.</param>
         public OpenIddictMessage([NotNull] IEnumerable<KeyValuePair<string, JToken>> parameters)
         {
-            parameters = parameters ?? throw new ArgumentNullException(nameof(parameters));
+            if (parameters == null)
+            {
+                throw new ArgumentNullException(nameof(parameters));
+            }
 
             foreach (var parameter in parameters)
             {
@@ -59,7 +62,10 @@ namespace OpenIddict.Abstractions
         /// <param name="parameters">The message parameters.</param>
         public OpenIddictMessage([NotNull] IEnumerable<KeyValuePair<string, OpenIddictParameter>> parameters)
         {
-            parameters = parameters ?? throw new ArgumentNullException(nameof(parameters));
+            if (parameters == null)
+            {
+                throw new ArgumentNullException(nameof(parameters));
+            }
 
             foreach (var parameter in parameters)
             {
@@ -78,7 +84,10 @@ namespace OpenIddict.Abstractions
         /// <param name="parameters">The message parameters.</param>
         public OpenIddictMessage([NotNull] IEnumerable<KeyValuePair<string, string>> parameters)
         {
-            parameters = parameters ?? throw new ArgumentNullException(nameof(parameters));
+            if (parameters == null)
+            {
+                throw new ArgumentNullException(nameof(parameters));
+            }
 
             foreach (var parameter in parameters)
             {
@@ -97,7 +106,10 @@ namespace OpenIddict.Abstractions
         /// <param name="parameters">The message parameters.</param>
         public OpenIddictMessage([NotNull] IEnumerable<KeyValuePair<string, string[]>> parameters)
         {
-            parameters = parameters ?? throw new ArgumentNullException(nameof(parameters));
+            if (parameters == null)
+            {
+                throw new ArgumentNullException(nameof(parameters));
+            }
 
             foreach (var parameter in parameters)
             {
@@ -126,7 +138,10 @@ namespace OpenIddict.Abstractions
         /// <param name="parameters">The message parameters.</param>
         public OpenIddictMessage([NotNull] IEnumerable<KeyValuePair<string, StringValues>> parameters)
         {
-            parameters = parameters ?? throw new ArgumentNullException(nameof(parameters));
+            if (parameters == null)
+            {
+                throw new ArgumentNullException(nameof(parameters));
+            }
 
             foreach (var parameter in parameters)
             {
