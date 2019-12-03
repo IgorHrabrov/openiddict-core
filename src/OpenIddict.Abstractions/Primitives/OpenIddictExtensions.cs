@@ -812,7 +812,7 @@ namespace OpenIddict.Abstractions
                 throw new ArgumentException("The claim type cannot be null or empty.", nameof(type));
             }
 
-            return principal.FindFirst(claim => string.Equals(claim.Type, type))?.Value;
+            return principal.FindFirst(type)?.Value;
         }
 
         /// <summary>
