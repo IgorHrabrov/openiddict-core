@@ -1792,15 +1792,6 @@ namespace OpenIddict.Abstractions
         public static ClaimsPrincipal SetInternalTokenId([NotNull] this ClaimsPrincipal principal, string identifier)
             => principal.SetClaim(Claims.Private.TokenId, identifier);
 
-        /// <summary>
-        /// Sets the token usage associated with the claims principal.
-        /// </summary>
-        /// <param name="principal">The claims principal.</param>
-        /// <param name="tokenUsage">The token usage to store.</param>
-        /// <returns>The claims principal.</returns>
-        public static ClaimsPrincipal SetTokenUsage([NotNull] this ClaimsPrincipal principal, string tokenUsage)
-             => principal.SetClaim(Claims.Private.TokenUsage, tokenUsage);
-
         private static IEnumerable<string> GetValues(string source, char[] separators)
         {
             Debug.Assert(!string.IsNullOrEmpty(source), "The source string shouldn't be null or empty.");
