@@ -1261,7 +1261,7 @@ namespace OpenIddict.Abstractions.Tests.Primitives
         }
 
         [Fact]
-        public void GetClaim_IsCaseSensitive()
+        public void GetClaim_IsCaseInsensitive()
         {
             // Arrange
             var identity = new ClaimsIdentity();
@@ -1269,7 +1269,7 @@ namespace OpenIddict.Abstractions.Tests.Primitives
             principal.SetClaim("type", "value");
 
             // Act and assert
-            Assert.Null(principal.GetClaim("TYPE"));
+            Assert.Equal("value", principal.GetClaim("TYPE"));
         }
 
         [Fact]
@@ -2047,7 +2047,7 @@ namespace OpenIddict.Abstractions.Tests.Primitives
         }
 
         [Fact]
-        public void SetClaim_IsCaseSensitive()
+        public void SetClaim_IsCaseInsensitive()
         {
             // Arrange
             var identity = new ClaimsIdentity();
@@ -2057,7 +2057,7 @@ namespace OpenIddict.Abstractions.Tests.Primitives
             principal.SetClaim("TYPE", "value");
 
             // Assert
-            Assert.Null(principal.GetClaim("type"));
+            Assert.Equal("value", principal.GetClaim("type"));
         }
 
         [Fact]
